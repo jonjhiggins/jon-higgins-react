@@ -3,7 +3,7 @@
 /* You don't have to leave this credit comment in, but it would be nice of you. */
 @font-face {
   font-family: "Boing";
-  src: url("/fonts/BoingWEB.woff2") format("woff2"), url("/fonts/BoingWEB.woff") format("woff");
+  src: url("./fonts/BoingWEB.woff2") format("woff2"), url("./fonts/BoingWEB.woff") format("woff");
   font-weight: bold;
   font-style: normal; }
 
@@ -462,7 +462,7 @@ pre {
       width: 4.5rem;
       height: 5.25rem;
       padding: 0;
-      background: url(/img/logo.svg) 0 0 no-repeat transparent;
+      background: url(./logo.svg) 0 0 no-repeat transparent;
       border-bottom: 0; }
     .navigation .navigation__item--home .navigation__link__text {
       border: 0;
