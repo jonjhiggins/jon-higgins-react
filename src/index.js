@@ -17,9 +17,9 @@ ReactDOM.render(
       </header>
       <main id="main">
         <Route exact path="/" component={Home}/>
-        <Route path="/work" component={Articles} view="word"/>
-        <Route path="/words" component={Articles} view="words"/>
-        <Route path="/who" component={Articles} view="who"/>
+        <Route path="/work" render={ props => <Articles view="work" {...props}/> }/>
+        <Route path="/words" render={ props => <Articles view="words" {...props}/> }/>
+        <Route path="/who" render={ props => <Articles view="who" {...props}/> }/>
       </main>
       <footer id="footer"></footer>
     </div>
