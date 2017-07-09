@@ -1,0 +1,22 @@
+{
+	"siteName": "Jon Higgins",
+	"siteDescription": "a front-end developer based in Melbourne, Australia",
+	"navigation": [
+		{
+			"title": "Home",
+			"link": "/"
+		},
+		{
+			"title": "Work",
+			"link": "/work"
+		},
+		{
+			"title": "Words",
+			"link": "/words"
+		},
+		{
+			"title": "Who?",
+			"link": "/who"
+		}
+	]
+}
