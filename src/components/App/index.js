@@ -28,11 +28,11 @@ class App extends Component {
       case 'home':
         return <Home/>
       case 'work':
-        return <Articles view="work"/>
+        return <Articles title="Work" description="Article content"/>
       case 'words':
-        return <Articles view="words"/>
+        return <Articles title="Words"/>
       case 'who':
-        return <Articles view="who"/>
+        return <Articles title="Who"/>
       default:
         return <NoMatch/>
     }
