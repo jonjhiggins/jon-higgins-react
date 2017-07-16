@@ -17,22 +17,33 @@ const NoMatch = () => (
 )
 
 class App extends Component {
-  getContent (contentId) {
-    //
+  constructor (props) {
+    super(props)
+    this.state = {
+      words: {}
+    }
+  }
+
+  componentDidMount () {
+    fetch('/data/words.json')
+      .then(response => response.json())
+      .then(json => {
+        this.setState({ words: json })
+      })
   }
   /**
    *  Decide which component to render in main area
    *  @param {string} view - home / work / word / who
-   *  @param {string} contentId - passed in from url (e.g. work/:contentId)
+   *  @param {promise} contentId
    */
   getMainArea (view, contentId) {
     switch (view) {
       case 'home':
         return <Home/>
       case 'work':
-        return contentId ? <ArticlesItem title="Work" contentId={contentId}/> : <Articles title="Work" contentId={contentId}/>
+        return contentId ? <ArticlesItem title="Work" content={this.state.words[contentId]}/> : <Articles title="Work"/>
       case 'words':
-        return contentId ? <ArticlesItem title="Words" contentId={contentId}/> : <Articles title="Words" contentId={contentId}/>
+        return contentId ? <ArticlesItem title="Words" content={this.state.words[contentId]}/> : <Articles title="Words"/>
       case 'who':
         return <Articles title="Who"/>
       default:
