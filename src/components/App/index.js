@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import siteData from '../../data/site.json' // @TODO improve path or pass from index.js
 import Home from '../../components/Home/' // @TODO improve path or pass from index.js
 import Articles from '../../components/Articles/' // @TODO improve path or pass from index.js
+import ArticlesItem from '../../components/ArticlesItem/' // @TODO improve path or pass from index.js
 import Navigation from '../../components/Navigation/' // @TODO improve path or pass from index.js
 
 // @TODO move into separate component?
@@ -16,21 +17,22 @@ const NoMatch = () => (
 )
 
 class App extends Component {
-  /**
-   * Set initial state on component init
-   */
-  constructor (props) {
-    super(props)
-    this.state = { selectedLinkId: 0 }
+  getContent (contentId) {
+    //
   }
-  getMainArea (view) {
+  /**
+   *  Decide which component to render in main area
+   *  @param {string} view - home / work / word / who
+   *  @param {string} contentId - passed in from url (e.g. work/:contentId)
+   */
+  getMainArea (view, contentId) {
     switch (view) {
       case 'home':
         return <Home/>
       case 'work':
-        return <Articles title="Work" description="Article content"/>
+        return contentId ? <ArticlesItem title="Work" contentId={contentId}/> : <Articles title="Work" contentId={contentId}/>
       case 'words':
-        return <Articles title="Words"/>
+        return contentId ? <ArticlesItem title="Words" contentId={contentId}/> : <Articles title="Words" contentId={contentId}/>
       case 'who':
         return <Articles title="Who"/>
       default:
@@ -38,7 +40,7 @@ class App extends Component {
     }
   }
   render () {
-    const main = this.getMainArea(this.props.view)
+    const main = this.getMainArea(this.props.view, this.props.match.params.contentId)
     return (
       <div id="app">
         <header className="header" id="header">
