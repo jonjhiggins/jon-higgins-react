@@ -39,7 +39,8 @@ To test it out, let's build a simple app that will store info about Australian s
 1. `mkdir serverless-test && cd $_ `
 3. Create file `serverless.yml` - this contains all the configuration the Serverless npm package needs to deploy to AWS.
 4. Add the following content to `serverless.yml`:
-```
+
+```yaml
 service: serverless-test
 
 frameworkVersion: ">=1.1.0 <2.0.0"
@@ -92,6 +93,7 @@ resources:
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.DYNAMODB_TABLE}
 ```
+
 This configuration make look complicated, but there's not too much too it:
 
 - In `provider` we're hooking up to the DynamoDB table that  will be our database, `iamRoleStatements` allow specific actions on the table that we'll reference in our Lambda functions.
@@ -100,7 +102,8 @@ This configuration make look complicated, but there's not too much too it:
 
 5. Create `states/create.js` and `states/list.js`. These will contain the functions that create and list states respectively.
 6. Add the following content to `states/create.js`:
-```
+
+```js
 const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
@@ -141,10 +144,11 @@ module.exports.create = (event, context, callback) => {
     callback(null, response);
   });
 };
+```
 
-```
 6. Add the following content to `states/list.js`:
-```
+
+```js
 const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-dependencies
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
@@ -170,8 +174,8 @@ module.exports.list = (event, context, callback) => {
     callback(null, response);
   });
 };
-
 ```
+
 7. Deploy using `serverless deploy`, make a note of the endpoint URLs at the end
 8. Add a state with a cURL request (replacing XXXXXXX with the ID within the endpoint URLs from previous step): `curl -X POST https://XXXXXXX.execute-api.us-east-1.amazonaws.com/dev/states --data '{ "state": "South Australia", "slogan": "The Wine State", "capital": "Adelaide" }'`
 9. View the states in the database with a cURL request: `curl -X GET https://XXXXXXX.execute-api.us-east-1.amazonaws.com/dev/states`
