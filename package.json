@@ -15,7 +15,8 @@
   },
   "scripts": {
     "markdown": "m2j src/data/words/*.md -o public/data/words.json -c",
-    "start": "yarn markdown && yarn start-js",
+    "markdown:watch": "nodemon -e md -x \"yarn markdown\"",
+    "start": "yarn markdown:watch & yarn start-js",
     "start-js": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
