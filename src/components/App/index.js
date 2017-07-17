@@ -4,6 +4,7 @@ import siteData from '../../data/site.json' // @TODO improve path or pass from i
 import Home from '../../components/Home/' // @TODO improve path or pass from index.js
 import Articles from '../../components/Articles/' // @TODO improve path or pass from index.js
 import ArticlesItem from '../../components/ArticlesItem/' // @TODO improve path or pass from index.js
+import Article from '../../components/Article/' // @TODO improve path or pass from index.js
 import Navigation from '../../components/Navigation/' // @TODO improve path or pass from index.js
 
 // @TODO move into separate component?
@@ -24,6 +25,9 @@ class App extends Component {
     }
   }
 
+  /**
+   * Load articles via AJAX
+   */
   componentDidMount () {
     fetch('/data/words.json')
       .then(response => response.json())
@@ -41,9 +45,9 @@ class App extends Component {
       case 'home':
         return <Home/>
       case 'work':
-        return contentId ? <ArticlesItem title="Work" content={this.state.words[contentId]}/> : <Articles title="Work"/>
+        return contentId ? <Article title="Work" content={this.state.words[contentId]}/> : <Articles title="Work"/>
       case 'words':
-        return contentId ? <ArticlesItem title="Words" content={this.state.words[contentId]}/> : <Articles title="Words"/>
+        return contentId ? <Article title="Words" content={this.state.words[contentId]}/> : <Articles title="Words" content={this.state.words}/>
       case 'who':
         return <Articles title="Who"/>
       default:

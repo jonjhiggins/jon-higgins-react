@@ -34,50 +34,60 @@ class ArticlesItem extends Component {
     */}
     return null
   }
-  showButtons (contentUrl) {
-    const buttonHtml = (
-      <div className="article__buttons button-holder">
-        <a href={contentUrl} className="button button--arrow">View Work</a>
-      </div>
-    )
-    return contentUrl ? buttonHtml : ''
-  }
 
   formatContent () {
     return {
-      date: this.props.content ?  moment(this.props.content.date, 'YYYYMMDD').format('MMM YYYY') : '',
+      url: this.props.content ? this.props.content.url : '',
+      date: this.props.content ? moment(this.props.content.date, 'YYYYMMDD').format('MMM YYYY') : '',
+      images: this.props.content ? this.props.content.images : '',
       title: this.props.content ? this.props.content.title : '',
-      heroImages: this.props.content ? this.props.content.heroImages : null,
-      text: this.props.content ? this.props.content.content : '',
-      contentUrl: this.props.content ? this.props.content.contentUrl : null
+      description: this.props.content ? this.props.content.description : ''
     }
   }
 
   render () {
     const content = this.formatContent()
+    const responsiveImages = content.images > 1
     return (
-      <article className={this.articleClassName()}>
-        <div className="page">
+      <a href="{content.url}" className="article-item__link">
+        <header className="article-item__header">
+          {/* @TODO add date in {{#if archiveMode}}
+          <p className="article-item__date">{{date}}</p>
+          */}
+          <h3 className="article-item__title h1">{content.title}</h3>
+        </header>
+        {content.images &&
+          <figure className="article-item__image">
+            {responsiveImages &&
+              <picture>
+                <source media="(min-width: 58.25rem)" srcset="/assets/img/{content.images[1]}" /> {/* Large breakpoint */}
+                <img src="/assets/img/{content.images[0]}" alt=""/>
+              </picture>
+            }
+            {!responsiveImages &&
+                <img src="/assets/img/{content.images[1]}" alt="" />
+            }
+          </figure>
+        }
+        <footer className="article-item__footer">
+          <p className="article-item__description">{content.description}</p>
+          <div className="article-item__buttons button-holder">
+            <div className="button button--arrow">View</div>
+          </div>
+        </footer>
+      </a>
 
-          <p className="article__date">{content.date}</p>
-          <h1 className="article__title">{content.title}</h1>
-          {this.showHeroImages(content.heroImages)}
-          <div className="article__description" dangerouslySetInnerHTML={{__html: marked(content.text)}}></div>
-          {this.showButtons(content.contentUrl)}
-        </div>
-      </article>
     )
   }
 }
 
 ArticlesItem.propTypes = {
   content: PropTypes.shape({
+    url: PropTypes.url,
     title: PropTypes.string,
-    text: PropTypes.string,
-    heroImages: PropTypes.array,
-    contentUrl: PropTypes.string,
+    description: PropTypes.string,
     date: PropTypes.date
   })
-};
+}
 
 export default ArticlesItem
