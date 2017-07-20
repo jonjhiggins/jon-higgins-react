@@ -4,7 +4,18 @@ import ArticlesItem from '../../components/ArticlesItem/'
 class Articles extends Component {
   render () {
     const contentObject = this.props.content
-    const contentArray = contentObject ? Object.keys(contentObject).map(key => contentObject[key]) : null
+    let contentArray = null
+
+    // Turn content into an array and sort by date
+    if (contentObject) {
+      contentArray = Object.keys(contentObject)
+        .map(key => {
+          const obj = contentObject[key]
+          obj.slug = key
+          return obj
+        })
+        .sort((x, y) => new Date(y.date) - new Date(x.date))
+    }
 
     return (
       <div className="module module--article-list body-text">
@@ -14,7 +25,7 @@ class Articles extends Component {
           }
 
           <div className="article-list">
-            {contentArray && contentArray.map((content, index) => <ArticlesItem key={ index } content={content}/>)}
+            {contentArray && contentArray.map((content, index) => <ArticlesItem key={index} content={content} type={this.props.type}/>)}
           </div>
 
           {this.props.archiveAvailable &&

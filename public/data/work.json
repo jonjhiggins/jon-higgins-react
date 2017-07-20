@@ -1,0 +1,233 @@
+{
+  "instiller-email": {
+    "layout": "work-item",
+    "category": "work",
+    "title": "Responsive email template for Instiller",
+    "description": "After seeing a boom in mobile email open rates, a responsive template was needed.",
+    "date": "2013-04-01T00:00:00.000Z",
+    "type": "email",
+    "content_url": "/attachments/instiller-email/",
+    "skills": [
+      "design",
+      "build"
+    ],
+    "images": [
+      "article-image.jpg"
+    ],
+    "archive": true,
+    "preview": "I designed and built this responsive email which is cross-client …",
+    "content": "\n\nI designed and built this responsive email which is cross-client compatible with everything from Android Mail through to Outlook 2013.\n",
+    "iso8601Date": "2013-04-01T11:00:00+11:00",
+    "basename": "instiller-email"
+  },
+  "instiller-ui": {
+    "layout": "work-item",
+    "category": "work",
+    "title": "Design user interface for email marketing solution",
+    "date": "2011-10-01T00:00:00.000Z",
+    "type": "web",
+    "skills": [
+      "design",
+      "build"
+    ],
+    "content_url": "http://www.instiller.co.uk",
+    "images": [
+      "article-image.jpg"
+    ],
+    "description": "Design user interface for powerful app used daily to send millions of emails for brands such as Premier Inn and HMV",
+    "archive": true,
+    "preview": "#### The problem\n\nFrom 2010-2013 I contributed to the on-going …",
+    "content": "\n\n#### The problem\n\nFrom 2010-2013 I contributed to the on-going development of the user interface for Instiller, the email marketing solution designed for digtial agencies. As the app had gradually been improved and grown in complexity it had began to suffer from issues with both visual and interactive consistency. Losing this consistency was detrimental to both the user's experience and the speed of development.\n\n#### The solution\n\nI designed and established a clean, simple visual and interactive style that was an evolution from app's current style. I also built several UI widgets to ensure consistent presentation whilst enhancing the user's experience.\n\n###### Rebrandable\n<img src=\"/assets/img/work-article-instiller-ui-rebrand.png\" alt=\"\" title=\"Screenshot of rebrandable UI\"/>\nAs the app is white label visual style is kept simple to fit with a wide range of brands.\n\n\n###### Consistent\nGrids and consistent navigational elements improve usability. Colour was reduced to a traffic light system of red (\"error\"), amber (\"warning\") and green (\"ok/done\"); with blue also used for \"info\". I designed custom icons for UI elements and to represent different content types.\n\n###### Powerful\n<img src=\"/assets/img/work-article-instiller-ui-item.png\" alt=\"\" title=\"Screenshot of UI element\"/>\nUI widgets, such as javascript emulating a single page web-app improve user experience and reduce development time.\n",
+    "iso8601Date": "2011-10-01T10:00:00+10:00",
+    "basename": "instiller-ui"
+  },
+  "instiller-website": {
+    "layout": "work-item",
+    "category": "work",
+    "title": "Responsive website for Instiller",
+    "class": "instiller-site",
+    "date": "2013-08-01T00:00:00.000Z",
+    "type": "web",
+    "skills": [
+      "design",
+      "build"
+    ],
+    "images": [
+      "article-image.jpg"
+    ],
+    "content_url": "http://www.instiller.co.uk",
+    "description": "Communicate and demonstrate that this email marketing solution is the choice for digital agencies.",
+    "archive": true,
+    "preview": "#### The problem\n\nIn early 2013, email marketing solution provider …",
+    "content": "\n\n#### The problem\n\nIn early 2013, email marketing solution provider Instiller engaged a design agency to realise their ideas for a new brand and provide a new website. The website provided was a good fit for the initial brand, but as the brand developed and sales got going it became evident that the design/build had not yet reached its full potential. I was asked to look for and work on areas of improvement.\n\nInstiller were happy with the general visual aesthetic, the main areas for improvement were to better communicate the updated brand and better demonstrate the product's benefits. Issues with the build quality and the flexibility of the CMS also had to be addressed.\n\n##### Communicate updated brand\n* Brand should appear more \"helpful\" and approachable, to encourage communication from prospects or clients.\n* Simplify visual aesthetic to reflect Instiller's ease-of-use.\n\n##### Demonstrate the product's benefits\n* Small screenshots used did not demonstrate product's ease-of-use or provide visual appeal. Instiller wanted the product to come to the fore, rather than hide away.\n\n##### Resolve build quality issues\n* The site's approach to responsive layouts. ![Responsive issue](/assets/img/work-item-instiller-site-responsive-issue.png \"Responsive issue\")\n* Grid system implemented did not allow for more complex layouts. ![Grid issue](/assets/img/work-item-instiller-site-grid-issue.png \"Grid issue\")\n* Lack of consistent vertical rhythmn.\n* Lack of consistent typographic rhythm.\n* Adding new pages and layouts was disproprtionately time consuming.\n\n#### The solution\n\n##### Communicate updated brand\n* Visual style refined in line with updated brand - changes centred around appearing more approachable and reflecting product's ease-of-use.\n\n##### Demonstrate the product's benefits\n* Revised design to include large, high-quality SVG screenshots. Simple animations communicate product's ease-of-use.\n\n##### Resolve build quality issues\n* Rebuild from ground-up using [Bourbon Neat](http://neat.bourbon.io/) responsive grid system.\n* Implement a baseline grid in multiples of 6.\n* Design and implement a consistent type system using [Modular Scale](http://modularscale.com).\n* Switch whole site over to Wordpress.\n\n#### The outcome\n\nSimplifying the visual style allowed updated copy and the product itself to take centre stage. Within a week of the changes there was a noticeable uplift in conversions.\n\nBasing the layouts on Bourbon Neat resulted in templates free of presentation markup and switching to Wordpress resulted in more consistent templating: both contributing to easy editing and preserving consistency in the future.\n\nCleaning up the typography, vertical rhythm and improving responsive layouts allowed Instiller to present themselves confidently, contributing to the growth of their brand.\n",
+    "iso8601Date": "2013-08-01T10:00:00+10:00",
+    "basename": "instiller-website"
+  },
+  "land-rover-interactive-stories": {
+    "layout": "work-item",
+    "category": "work",
+    "title": "Land Rover interactive stories",
+    "class": "land-rover-interactive-stories",
+    "date": "2015-09-01T00:00:00.000Z",
+    "type": "web",
+    "skills": [
+      "build"
+    ],
+    "images": [
+      "work-hero--land-rover-interactive-story@2x.jpg"
+    ],
+    "heroVideos": [
+      "interactive-story-video-short"
+    ],
+    "content_url": "http://www.landrover.co.uk/above-and-beyond/featured-articles/index.html",
+    "description": "Provide immersive, magazine-style articles for global premium brand.",
+    "archive": false,
+    "preview": "## The problem\nLand Rover's design agency …",
+    "content": "\n\n## The problem\nLand Rover's design agency [OgilvyOne](https://www.ogilvyone.com/) produced a concept video demonstrating immersive, magazine-style articles on the web.\n\nOur Agile team was tasked with developing the concept into a set of fully-functional, responsive components that were authorable via CMS. As the concept was created in After Effects we were unsure all of the concept's effects were possible on the web.\n\n## The solution\nTo achieve the effects we sketched out different solutions in code and iterated with the designers to find a balance between interactivity/motion and performance.\n\n<p class=\"p--pullquote\" data-pullquote=\"we iterated to find a balance between interactivity and performance\" markdown=\"1\">We worked with new / experimental technologies, such as <a href=\"https://developer.mozilla.org/en/docs/Web/CSS/clip-path\">clip-path</a> and <a href=\"https://developer.mozilla.org/en-US/docs/Web/Events/devicemotion\">accelerometer</a>, as such we were always considering fallbacks - using a tiered approach to support basic and advanced devices/browsers.\n</p>\n\nPerformance was a major concern due to the combination of effects and the number of interactive components that could be on the same page. We kept an eye on the FPS monitor, refactoring as required - in particular compositing layers and avoiding re-draws.\n\nCreative solutions were sometimes required to get the best performance. On hovering the gallery component, images were slowly scaled, their opacity was adjusted and their borders grew via clip-path. Firefox and Safari couldn't cope with this combination of effects, after much experimentation we found they could animate clipPaths of SVGs smoothly, so we re-wrote the whole component to nest the images within SVGs!\n",
+    "iso8601Date": "2015-09-01T10:00:00+10:00",
+    "basename": "land-rover-interactive-stories"
+  },
+  "land-rover-visual-identity-refresh": {
+    "layout": "work-item",
+    "category": "work",
+    "title": "Land Rover visual identity refresh",
+    "class": "land-rover-visual-identity-refresh",
+    "date": "2015-03-01T00:00:00.000Z",
+    "type": "web",
+    "skills": [
+      "build"
+    ],
+    "images": [
+      "work-hero--land-rover-visual-identity@2x.png",
+      "work-hero--land-rover-visual-identity--large.png"
+    ],
+    "heroImages": [
+      {
+        "image": "work-hero--land-rover-visual-identity--before.jpg",
+        "caption": "Before"
+      },
+      {
+        "image": "work-hero--land-rover-visual-identity--after.jpg",
+        "caption": "After"
+      }
+    ],
+    "content_url": "http://www.landrover.co.uk",
+    "description": "Applying Land Rover's refreshed identity to every part of their global marketing websites.",
+    "archive": false,
+    "preview": "## The problem\nLand Rover's refreshed visual identity (VI) needed to …",
+    "content": "\n\n## The problem\nLand Rover's refreshed visual identity (VI) needed to be rolled out across all its global marketing sites. The VI had been designed for print, so needed translating to screen format.\n\nAlso, there were visual inconsistencies through out the site which broke VI/brand guidelines.\n\n## The solution\nAs part of the Land Rover Agile team I collaborated with other developers and designers to implement the new VI. This included new colour palettes, fonts and grids. We worked hard on visual consistency, particularly on grids and typography, with minute attention to detail.\n\nMy colleague [Pete Williams](http://www.petewritescode.com) and I re-worked the SASS codebase to make it more modular and documented the new VI guidelines for future maintainability.\n\n#### Improving typographic and layout consistency\n\n* Contributed to both the design of and implementation of a baseline grid system based on the x-height of titles\n* Limited the range of font sizes used, with sets for different break points\n* Re-worked every component within the site to use uniform margins specified by the VI's grid system\n\n#### Improving codebase\n\n* SASS: replaced manually inputted values with variables for consistency\n* SASS: pulled out shared styles from components and moved to partials for consistency\n* Documented new VI guidelines in [Assemble](http://assemble.io)-based styleguide\n\n#### Improving content\n\n* Worked with content authors to clean-up content that broke VI guidelines. Introduced new components / layout options based on author's feedback.\n",
+    "iso8601Date": "2015-03-01T11:00:00+11:00",
+    "basename": "land-rover-visual-identity-refresh"
+  },
+  "opep-brand": {
+    "layout": "work-item",
+    "category": "work",
+    "title": "OPEP brand",
+    "class": "opep-brand",
+    "date": "2013-05-01T00:00:00.000Z",
+    "type": "brand",
+    "skills": [
+      "brand",
+      "design"
+    ],
+    "content_url": "http://www.opep.co.uk",
+    "images": [
+      "article-image.jpg"
+    ],
+    "description": "Create brand for teacher collective aiming for outstanding PE",
+    "archive": true,
+    "preview": "#### The problem\n\nOPEP (Outstanding Physical Education Preparation) …",
+    "content": "\n\n#### The problem\n\nOPEP (Outstanding Physical Education Preparation) are a non-profit teachers' organisation looking at using collobarative sharing of ideas and resources to improve the standard of PE lessons in the UK. Having established themselves in their native Milton Keynes, OPEP partnered with sports supplier Maudesport to assist with expanding nationally through a new website.\n\n<p class=\"p--pullquote\" data-pullquote=\"a strong, professional brand needed to be established to define OPEP's position and inspire others to join the cause.\">Before work on the website could begin, a strong, professional brand needed to be established to define OPEP's position and inspire others to join the cause. My competitor analysis indicated that similar resource sharing sites often had underdeveloped brands, so this was identified as an area to gain traction against more established sites.</p>\n\nThe brand also needed to establish a coherent brand association between OPEP and Maudesport: reflecting the strong partnership that was developing.\n\n#### The solution\n\nWorking together with OPEP we created a bold, strong brand in terms of character and personality using [paradoxical pairs](http://www.jonhiggins.co.uk/words/brand-paradox.html).\n\nFrom this I designed a visual style based around the brand's \"expert-active\" pairing, noticably expressed through the serif/sans type combination. Bright, bold, optimistic colours reflected OPEP's community-minded outlook while the logo was based around the themes of collaboration central to OPEP's identity.\n\nI coined the strapline \"Let's make PE outstanding\" - succinctly expressing OPEP's aim and inviting others to contribute to it. Both single and dual (with and without partner brand Maudesport) branding was created, visually connecting the two brands.\n\nCompleting the project united the two parties and built anticipation for [the website](/work/opep-website/) that would be the first application of the new brand.\n",
+    "iso8601Date": "2013-05-01T10:00:00+10:00",
+    "basename": "opep-brand"
+  },
+  "opep-website": {
+    "layout": "work-item",
+    "category": "work",
+    "title": "OPEP website",
+    "class": "opep-website",
+    "date": "2013-07-01T00:00:00.000Z",
+    "type": "web",
+    "skills": [
+      "plan",
+      "design",
+      "build"
+    ],
+    "content_url": "http://www.opep.co.uk",
+    "images": [
+      "article-image.jpg"
+    ],
+    "description": "Create new resource-sharing website for PE organisation aiming for outstanding lessons.",
+    "archive": true,
+    "preview": "#### The problem\n\nOPEP are a collective of teachers committed to …",
+    "content": "\n\n#### The problem\n\nOPEP are a collective of teachers committed to making PE lessons and learning outstanding. Essential to their offering is their website, through which they and other teachers can share, discuss and collaborate on PE resources.\n\nOPEP and its users were limited by the functionality of their previous website:\n\n* Finding, viewing and contributing resources were not quick, simple processes.\n* Reviewing and suggesting additions to articles was not possible.\n* There were limits on the number and type of resources that could be uploaded.\n* Viewing on mobile reduced the functionality of the site, to the detriment of user experience.\n\nI was asked to work on creating a new site to resolve these issues and look for other areas for improvement. On reviewing the site I identified the site's information architecture, visual style and readability of resources as areas for improvement.\n\n#### The solution\nBefore starting work on the website, I worked with OPEP and Maudesport (their partner company) to [create a brand and visual identity for OPEP](/work/opep-brand). The resulting brand informed the visual style of the site, to resolve issues around readability I based type sizing on [Scale.css](https://github.com/viljamis/Scale) to ensure resources were readable across devices.\n\n<p class=\"p--pullquote\" data-pullquote=\"user research pointed to teachers visiting resource sites primarily when under time pressure\">To resolve issues around information architecture and user experience I conducted user research, finding out about teacher's approach to lesson planning. The user research pointed to teachers visiting resource sites primarily when under time pressure, requiring resources for use in lessons. Teachers also, less frequently, visited resource sites for tips on improving their lessons and discussion. Using this information, existing content was reorganised into overall content types of \"Resources\" (Resources for use in outstanding PE lessons) and \"Guides\" (How to use, improve and create resources for outstanding PE lessons). \"Resources\" were given priority over \"Guides\" to reflect the teacher's needs.</p>\n\nTo improve the processes of finding, viewing and contributing resources I created and prioritised user stories around these topics. These informed the wireframes and eventually the sites functionality - including searching, categorising and uploading of resources.\n\nThe admin's experience was also greatly improved by switching the site over to Wordpress, giving them control over all the site's content from wherever they are.\n\nThough there were time pressures on the project, user research highlighted the requirement for a responsive approach / seamless user experience across devices. I opted for the [Frameless](http://framelessgrid.com/) grid system as this allowed a responsive approach but designing column by column was less time-consuming than a fluid grid system.\n\n#### The outcome\nBoth OPEP and Maudesport were happy that they now had the platform on which to base their resource-sharing website. The site is currently being filled with resources, following which work to develop a community around the site will begin.\n",
+    "iso8601Date": "2013-07-01T10:00:00+10:00",
+    "basename": "opep-website"
+  },
+  "the-icc": {
+    "layout": "work-item",
+    "category": "work",
+    "title": "The ICC Birmingham website",
+    "class": "the-icc",
+    "date": "2014-05-01T00:00:00.000Z",
+    "type": "web",
+    "skills": [
+      "build"
+    ],
+    "images": [
+      "article-image.jpg"
+    ],
+    "content_url": "http://www.theicc.co.uk",
+    "description": "I was lead frontend dev on the build of a new responsive site for one of Europe's most high profile conference centres.",
+    "archive": true,
+    "preview": "#### The problem\nThe International Convention Centre is one of …",
+    "content": "\n\n#### The problem\nThe International Convention Centre is one of central Birmingham's landmark buildings and has hosted party political conferences for all three main political parties. It's previous website no longer reflected it's stature:\n\n* Visually outdated\n* Not optimised for mobile\n* Event organisers found it difficult to find and compare event spaces within the ICC\n\nThe NEC Group (ICC's parent company) also required a new website for their new venue, [The Vox](http://www.thevoxcentre.co.uk/). This would share elements of the ICC's UI framework, but be distinguishable through different branding.\n\n#### The solution\n\n##### Design\nThe NEC's marketing agency [Eight Feet Tall](http://www.eightfeet-tall.com/) worked on a new visual aesthetic for the ICC, which resulted in flat PSDs of the site at desktop size. Areas with a high level of interaction were intentionally left blank so that we could prototype these together in-browser.\n\n![ICC design](/assets/img/work-item-icc-birmingham@2x.png \"ICC design\")\n\n##### Frontend development\nI led the frontend development for the ICC. My focus was on:\n\n* Ensuring the visual integrity of the designs translated to the web. This included introducing a baseline grid to the designs and adding subtle interaction animations.\n* Making desktop designs work well at all sizes down to mobile.\n* Modular, maintainable code - particularly important as codebase was shared with The Vox\n\n##### Working together\nAt various points in this project I was pairing up with both frontend and backend devs, as well as designers and stakeholders. The ICC's [hall picker](http://www.theicc.co.uk/venue/halls) was one area that benefited from everyone's input, which we produced several iterations of following feedback from user testing.\n\n![ICC Hall picker](/assets/img/work-item-icc-hall-picker@2x.png \"ICC Hall picker\")\n\n#### The outcome\nThe ICC's new site successfully launched in June 2014, with The Vox's site launching slightly before.\n\n> \"Our new website is a great example of what can be achieved by working collaboratively with the NEC Group's digital marketing team\"\n##### Claire Wagstaff, ICC Marketing and Communications Manager <a href=\"#icc-launches\">[1]</a>\n\n[1] <a href=\"http://www.theicc.co.uk/news/icc-launches-industry-leading-fully-responsive-website/\" id=\"icc-launches\">ICC Launches Industry Leading, Fully Responsive Website</a>\n",
+    "iso8601Date": "2014-05-01T10:00:00+10:00",
+    "basename": "the-icc"
+  },
+  "virgin-media-emails": {
+    "layout": "work-item",
+    "category": "work",
+    "title": "Email templates for Virgin Media",
+    "type": "email",
+    "skills": [
+      "design",
+      "build"
+    ],
+    "half-width": true,
+    "date": "2010-06-01T00:00:00.000Z",
+    "images": [
+      "article-image.jpg"
+    ],
+    "description": "Email templates for Britain's Next Top Model, VM Player and more.",
+    "archive": true,
+    "preview": "I designed and built several email template designs for Virgin …",
+    "content": "\n\nI designed and built several email template designs for Virgin Media's TV department. The email templates were sent out to hundreds of thousands of subscribers, used to promote TV programmes such as Britain's next Top Model and their Player streaming service. I was also relied on to update content each month, paying close attention to detail and working under pressured time frames.\n",
+    "iso8601Date": "2010-06-01T10:00:00+10:00",
+    "basename": "virgin-media-emails"
+  },
+  "we-are-10": {
+    "layout": "work-item",
+    "category": "work",
+    "title": "We are 10 - brand and microsite",
+    "class": "we-are-10",
+    "date": "2014-05-10T00:00:00.000Z",
+    "type": "web",
+    "skills": [
+      "brand",
+      "plan",
+      "design",
+      "build"
+    ],
+    "images": [
+      "article-image.jpg"
+    ],
+    "content_url": "http://weare10.neteffekt.com",
+    "description": "Utilise Givey API and Assemble to generate donations and buzz for charity project",
+    "archive": true,
+    "preview": "#### The problem\nWeb app developers Neteffekt were marking their …",
+    "content": "\n\n#### The problem\nWeb app developers Neteffekt were marking their 10th year in business by aiming to raise £10k for Birmingham Children's Hospital over a 6 month period. They asked me to help them achieve their target, together we outlined the requirements as:\n\n* A visual identity: generate buzz and galvanise the team\n* Utilise a donation service (e.g. Just Giving): must be easy to use and positively contribute to project\n* A microsite: generate donations and allow donors to track the project's progress\n\n\n#### The solution\n\n##### Clean, friendly visual identity\n* Selected fonts and colours to co-brand well with Neteffekt.\n* Clean design reflected Neteffekt's focus on ease-of-use.\n* Extra dimension of friendliness/personality through slightly playful visuals (amplified by interactions/animations on the microsite) - required to encourage people to donate to or support the project.\n\n##### A better donation service\n* Researched a number of donation services: most (including Just Giving) did not provide the visual aesthetic or donation user experience to match the rest of the project.\n* [Givey](http://givey.com), was a much closer fit and had the added bonus of all monies going directly to charity **(did you know [Just Giving currently takes an 5% cut](https://www.justgiving.com/fees/)?)**\n\n##### A dynamic, fun microsite\n* Broke down the site into sections of: What is it? How is it going? How can I contribute?\n* Simple animations encourage users to interact with project.\n\n##### Highlight dynamic aspect of project\n* Live totals raised and donations pulled from [Givey API](). Encourages repeat visits/donations and galvanises the team towards achieving their target.\n* Countdown to next challenges and tweets of support.\n* I utilised static-site generator [Assemble](), it's use of [Handlebars]() meant I could serve static HTML (fast) and re-render it in JS when data was available from the Givey API\n\n\n#### The outcome\n* Assemble's use of YML/JSON as data source meant it was simple for Neteffekt to update descriptions / text within the site after I'd finished my work.\n* At the time of writing: Neteffekt are 59% towards hitting their target - with 5 more challenges to run and 101 days left it looks like they should smash it!\n",
+    "iso8601Date": "2014-05-10T10:00:00+10:00",
+    "basename": "we-are-10"
+  }
+}

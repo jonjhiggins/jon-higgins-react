@@ -12,11 +12,6 @@ marked.setOptions({
 })
 
 class Articles extends Component {
-  articleClassName (className) {
-    className = className ? 'article--' + className : ''
-    return `article ${className}`
-  }
-
   formatContent () {
     return {
       date: this.props.content ? moment(this.props.content.date, 'YYYYMMDD').format('MMM YYYY') : '',
@@ -30,12 +25,11 @@ class Articles extends Component {
   render () {
     const content = this.formatContent()
     return (
-      <article className={this.articleClassName()}>
+      <article className="article {content.class ? 'article--' + content.class : ''}">
         <div className="page">
-
           <p className="article__date">{content.date}</p>
           <h1 className="article__title">{content.title}</h1>
-          {this.showHeroImages(content.heroImages)}
+          {/*}{this.showHeroImages(content.heroImages)}*/}
           <div className="article__description" dangerouslySetInnerHTML={{__html: marked(content.text)}}></div>
           {content.contentUrl &&
             <div className="article__buttons button-holder">

@@ -12,32 +12,9 @@ marked.setOptions({
 })
 
 class ArticlesItem extends Component {
-
-  articleClassName (className) {
-    className = className ? 'article--' + className : ''
-    return `article ${className}`;
-  }
-
-  showHeroImages (images) {
-    // @TODO
-    {/*
-      {{#if item.heroImages}}
-          <div class="article__hero-images">
-              {{#each item.heroImages}}
-                  <figure class="article__hero-content article__hero-content--image {{#unless this.caption}}article__hero-content--no-caption{{/unless}}">
-                      <span class="article__hero-image-holder"><img src="/assets/img/{{this.image}}" alt="" /></span>
-                      {{#if this.caption}}<figcaption class="article__hero-caption">{{this.caption}}</figcaption>{{/if}}
-                  </figure>
-              {{/each}}
-          </div>
-      {{/if}
-    */}
-    return null
-  }
-
   formatContent () {
     return {
-      url: this.props.content ? this.props.content.url : '',
+      url: this.props.content ? `/${this.props.type}/${this.props.content.slug}` : '',
       date: this.props.content ? moment(this.props.content.date, 'YYYYMMDD').format('MMM YYYY') : '',
       images: this.props.content ? this.props.content.images : '',
       title: this.props.content ? this.props.content.title : '',
@@ -45,17 +22,12 @@ class ArticlesItem extends Component {
     }
   }
 
-  articleClassName (className) {
-    className = className ? 'article--item--' + className : ''
-    return `article-item ${className}`
-  }
-
   render () {
     const content = this.formatContent()
     const responsiveImages = content.images > 1
     return (
-      <article className="article-item {content.class ? `article-item--${class}` : ''}">
-        <a href="{content.url}" className="article-item__link">
+      <article className="article-item {content.class ? 'article-item--' + content.class : ''}">
+        <a href={content.url} className="article-item__link">
           <header className="article-item__header">
             {/* @TODO add date in {{#if archiveMode}}
             <p className="article-item__date">{{date}}</p>

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import siteData from '../../data/site.json' // @TODO improve path or pass from index.js
 import Home from '../../components/Home/' // @TODO improve path or pass from index.js
 import Articles from '../../components/Articles/' // @TODO improve path or pass from index.js
-import ArticlesItem from '../../components/ArticlesItem/' // @TODO improve path or pass from index.js
 import Article from '../../components/Article/' // @TODO improve path or pass from index.js
 import Navigation from '../../components/Navigation/' // @TODO improve path or pass from index.js
 
@@ -45,9 +44,9 @@ class App extends Component {
       case 'home':
         return <Home/>
       case 'work':
-        return contentId ? <Article title="Work" content={this.state.words[contentId]}/> : <Articles title="Work"/>
+        return contentId ? <Article type="work" content={this.state.words[contentId]}/> : <Articles type="work"/>
       case 'words':
-        return contentId ? <Article title="Words" content={this.state.words[contentId]}/> : <Articles title="Words" content={this.state.words}/>
+        return contentId ? <Article type="words" content={this.state.words[contentId]}/> : <Articles type="words" content={this.state.words}/>
       case 'who':
         return <Articles title="Who"/>
       default:
