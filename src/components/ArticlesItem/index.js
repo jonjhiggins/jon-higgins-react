@@ -45,37 +45,44 @@ class ArticlesItem extends Component {
     }
   }
 
+  articleClassName (className) {
+    className = className ? 'article--item--' + className : ''
+    return `article-item ${className}`
+  }
+
   render () {
     const content = this.formatContent()
     const responsiveImages = content.images > 1
     return (
-      <a href="{content.url}" className="article-item__link">
-        <header className="article-item__header">
-          {/* @TODO add date in {{#if archiveMode}}
-          <p className="article-item__date">{{date}}</p>
-          */}
-          <h3 className="article-item__title h1">{content.title}</h3>
-        </header>
-        {content.images &&
-          <figure className="article-item__image">
-            {responsiveImages &&
-              <picture>
-                <source media="(min-width: 58.25rem)" srcset="/assets/img/{content.images[1]}" /> {/* Large breakpoint */}
-                <img src="/assets/img/{content.images[0]}" alt=""/>
-              </picture>
-            }
-            {!responsiveImages &&
-                <img src="/assets/img/{content.images[1]}" alt="" />
-            }
-          </figure>
-        }
-        <footer className="article-item__footer">
-          <p className="article-item__description">{content.description}</p>
-          <div className="article-item__buttons button-holder">
-            <div className="button button--arrow">View</div>
-          </div>
-        </footer>
-      </a>
+      <article className="article-item {content.class ? `article-item--${class}` : ''}">
+        <a href="{content.url}" className="article-item__link">
+          <header className="article-item__header">
+            {/* @TODO add date in {{#if archiveMode}}
+            <p className="article-item__date">{{date}}</p>
+            */}
+            <h3 className="article-item__title h1">{content.title}</h3>
+          </header>
+          {content.images &&
+            <figure className="article-item__image">
+              {responsiveImages &&
+                <picture>
+                  <source media="(min-width: 58.25rem)" srcset="/assets/img/{content.images[1]}" /> {/* Large breakpoint */}
+                  <img src="/assets/img/{content.images[0]}" alt=""/>
+                </picture>
+              }
+              {!responsiveImages &&
+                  <img src="/assets/img/{content.images[1]}" alt="" />
+              }
+            </figure>
+          }
+          <footer className="article-item__footer">
+            <p className="article-item__description">{content.description}</p>
+            <div className="article-item__buttons button-holder">
+              <div className="button button--arrow">View</div>
+            </div>
+          </footer>
+        </a>
+      </article>
 
     )
   }
