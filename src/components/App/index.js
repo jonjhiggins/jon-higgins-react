@@ -20,7 +20,9 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      words: {}
+      words: {},
+      work: {},
+      who: {}
     }
   }
 
@@ -62,7 +64,7 @@ class App extends Component {
       case 'words':
         return contentId ? <Article type="words" content={this.state.words[contentId]}/> : <Articles type="words" content={this.state.words} archiveMode={archive} archiveAvailable={false}/>
       case 'who':
-        return <Articles title="Who"/>
+        return <Article type="who" content={this.state.who['who']}/>
       default:
         return <NoMatch/>
     }

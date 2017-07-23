@@ -18,7 +18,7 @@ marked.setOptions({
 class Articles extends Component {
   formatContent () {
     return {
-      date: this.props.content ? moment(this.props.content.date, 'YYYYMMDD').format('MMM YYYY') : '',
+      date: this.props.content && this.props.content.date ? moment(this.props.content.date, 'YYYYMMDD').format('MMM YYYY') : '',
       title: this.props.content ? this.props.content.title : '',
       heroImages: this.props.content ? this.props.content.heroImages : null,
       text: this.props.content ? this.props.content.content : '',
@@ -31,7 +31,9 @@ class Articles extends Component {
     return (
       <article className="article {content.class ? 'article--' + content.class : ''}">
         <div className="page">
-          <p className="article__date">{content.date}</p>
+          {content.date &&
+            <p className="article__date">{content.date}</p>
+          }
           <h1 className="article__title">{content.title}</h1>
           {/*}{this.showHeroImages(content.heroImages)}*/}
           <div className="article__description" dangerouslySetInnerHTML={{__html: marked(content.text)}}></div>
