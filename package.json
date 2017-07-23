@@ -14,14 +14,15 @@
     "react-scripts": "1.0.10"
   },
   "scripts": {
-    "markdown": "yarn markdown:words & markdown:work & markdown:who",
+    "markdown": "yarn markdown:words & yarn markdown:work & yarn markdown:who",
     "markdown:words": "m2j src/data/words/*.md -o public/data/words.json -c",
     "markdown:work": "m2j src/data/work/*.md -o public/data/work.json -c",
     "markdown:who": "m2j src/data/who/*.md -o public/data/who.json -c",
     "markdown:watch": "nodemon -e md -x \"yarn markdown\"",
-    "start": "yarn markdown:watch & yarn start-js",
+    "start": "yarn markdown & yarn start-js",
     "start-js": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "yarn markdown:watch && yarn build-js",
+    "build-js": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

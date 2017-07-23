@@ -1,12 +1,18 @@
+/**
+ * List view of articles, e.g. /work
+ */
+
 import React, { Component } from 'react'
 import ArticlesItem from '../../components/ArticlesItem/'
 
 class Articles extends Component {
   render () {
     const contentObject = this.props.content
+    const archiveMode = this.props.archiveMode
     let contentArray = null
 
     // Turn content into an array and sort by date
+    // filter out archived/non-archived depending on mode
     if (contentObject) {
       contentArray = Object.keys(contentObject)
         .map(key => {
@@ -15,6 +21,10 @@ class Articles extends Component {
           return obj
         })
         .sort((x, y) => new Date(y.date) - new Date(x.date))
+        .filter(item => {
+          const archived = item.archive === true
+          return archived === archiveMode
+        })
     }
 
     return (

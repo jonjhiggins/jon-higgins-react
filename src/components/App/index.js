@@ -28,25 +28,39 @@ class App extends Component {
    * Load articles via AJAX
    */
   componentDidMount () {
+    // @TODO only load in words / work / who mode
     fetch('/data/words.json')
       .then(response => response.json())
       .then(json => {
         this.setState({ words: json })
       })
+
+    fetch('/data/work.json')
+      .then(response => response.json())
+      .then(json => {
+        this.setState({ work: json })
+      })
+
+    fetch('/data/who.json')
+      .then(response => response.json())
+      .then(json => {
+        this.setState({ who: json })
+      })
   }
   /**
    *  Decide which component to render in main area
    *  @param {string} view - home / work / word / who
-   *  @param {promise} contentId
+   *  @param {string|null|undefined} contentId - slug of content
+   *  @param {boolean} archive - are we in archive mode
    */
-  getMainArea (view, contentId) {
+  getMainArea (view, contentId, archive) {
     switch (view) {
       case 'home':
         return <Home/>
       case 'work':
-        return contentId ? <Article type="work" content={this.state.words[contentId]}/> : <Articles type="work"/>
+        return contentId ? <Article type="work" content={this.state.work[contentId]}/> : <Articles type="work" content={this.state.work} archiveMode={archive} archiveAvailable={true}/>
       case 'words':
-        return contentId ? <Article type="words" content={this.state.words[contentId]}/> : <Articles type="words" content={this.state.words}/>
+        return contentId ? <Article type="words" content={this.state.words[contentId]}/> : <Articles type="words" content={this.state.words} archiveMode={archive} archiveAvailable={false}/>
       case 'who':
         return <Articles title="Who"/>
       default:
@@ -54,7 +68,9 @@ class App extends Component {
     }
   }
   render () {
-    const main = this.getMainArea(this.props.view, this.props.match.params.contentId)
+    const contentId = this.props.match.params.contentId !== 'archive' ? this.props.match.params.contentId : null
+    const archive = this.props.match.params.contentId === 'archive'
+    const main = this.getMainArea(this.props.view, contentId, archive)
     return (
       <div id="app">
         <header className="header" id="header">

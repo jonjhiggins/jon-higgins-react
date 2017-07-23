@@ -1,3 +1,8 @@
+/**
+ * Single article component, used with in within
+ * an Articles component (list view)
+ */
+
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'

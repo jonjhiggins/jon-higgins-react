@@ -1,3 +1,7 @@
+/**
+ * Single article view, e.g. /work/land-rover-interactive-stories
+ */
+
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
