@@ -23,15 +23,16 @@ class ArticlesItem extends Component {
       date: this.props.content ? moment(this.props.content.date, 'YYYYMMDD').format('MMM YYYY') : '',
       images: this.props.content ? this.props.content.images : '',
       title: this.props.content ? this.props.content.title : '',
-      description: this.props.content ? this.props.content.description : ''
+      description: this.props.content ? this.props.content.description : '',
+      className: this.props.content ? this.props.content.class : '',
     }
   }
 
   render () {
     const content = this.formatContent()
-    const responsiveImages = content.images > 1
+    const responsiveImages = content.images && content.images.length > 1
     return (
-      <article className="article-item {content.class ? 'article-item--' + content.class : ''}">
+      <article className={`article-item ${content.className ? 'article-item--' + content.className : ''}`}>
         <a href={content.url} className="article-item__link">
           <header className="article-item__header">
             {/* @TODO add date in {{#if archiveMode}}
@@ -43,12 +44,12 @@ class ArticlesItem extends Component {
             <figure className="article-item__image">
               {responsiveImages &&
                 <picture>
-                  <source media="(min-width: 58.25rem)" srcset="/assets/img/{content.images[1]}" /> {/* Large breakpoint */}
-                  <img src="/assets/img/{content.images[0]}" alt=""/>
+                  <source media="(min-width: 58.25rem)" srcset={`/assets/img/${content.images[1]}`} /> {/* Large breakpoint */}
+                  <img src={`/assets/img/${content.images[0]}`} alt=""/>
                 </picture>
               }
-              {!responsiveImages &&
-                  <img src="/assets/img/{content.images[1]}" alt="" />
+              {!responsiveImages && content.images.length &&
+                  <img src={require(`../../assets/img/${content.images[0]}`)} alt="" />
               }
             </figure>
           }
@@ -70,7 +71,9 @@ ArticlesItem.propTypes = {
     url: PropTypes.url,
     title: PropTypes.string,
     description: PropTypes.string,
-    date: PropTypes.date
+    date: PropTypes.date,
+    className: PropTypes.string,
+    images: PropTypes.array
   })
 }
 

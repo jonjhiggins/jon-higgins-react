@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;" version="1.1" viewBox="0 0 262 220" width="100%" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style type="text/css">
+
+            #bg__inner {
+                animation: bg 4s ease infinite;
+                transform-origin: 50% 50%;
+                transform: translateX(0%) translateY(0);
+            }
+            #hair {
+                animation: hair 4s ease infinite alternate;
+                stroke-dasharray: 250;
+                stroke-dashoffset: 250;
+            }
+            @keyframes bg {
+                0% {
+                    transform: scale(0);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+            @keyframes hair {
+                0% {
+                    stroke-dashoffset: 250;
+                }
+                50% {
+                    stroke-dashoffset: 0;
+                }
+                100% {
+                    stroke-dashoffset: -250;
+                }
+            }
+        </style>
+        <clipPath id="outline">
+            <path
+                d="M27.329,94.77C30.048,75.791 37.921,57.317 51.14,41.562C88.913,-3.453 156.125,-9.334 201.14,28.438C221.998,45.94 234.454,69.763 238.058,94.77L243.386,94.77C251.874,94.77 258.765,101.661 258.765,110.149C258.765,118.637 251.874,125.528 243.386,125.528L238.032,125.528C235.274,144.403 227.415,162.766 214.264,178.438C176.492,223.453 109.279,229.334 64.264,191.562C43.489,174.129 31.049,150.426 27.389,125.528L18.614,125.528C10.126,125.528 3.235,118.637 3.235,110.149C3.235,101.661 10.126,94.77 18.614,94.77L27.329,94.77Z"
+                id="outline__path" style="fill:none;stroke-width:5.92px;stroke:rgb(128,121,0);"/>
+        </clipPath>
+    </defs>
+    <rect fill="#fff" height="100%" width="100%"></rect>
+    <g clip-path="url(#outline)">
+        <circle cx="50%" cy="50%" fill="rgb(255,242,0)" id="bg__inner" r="66.6%"></circle>
+    </g>
+    <path
+        d="M27.329,94.77C30.048,75.791 37.921,57.317 51.14,41.562C88.913,-3.453 156.125,-9.334 201.14,28.438C221.998,45.94 234.454,69.763 238.058,94.77L243.386,94.77C251.874,94.77 258.765,101.661 258.765,110.149C258.765,118.637 251.874,125.528 243.386,125.528L238.032,125.528C235.274,144.403 227.415,162.766 214.264,178.438C176.492,223.453 109.279,229.334 64.264,191.562C43.489,174.129 31.049,150.426 27.389,125.528L18.614,125.528C10.126,125.528 3.235,118.637 3.235,110.149C3.235,101.661 10.126,94.77 18.614,94.77L27.329,94.77Z"
+        id="circle__outline--ears" style="fill:none;stroke-width:5.92px;stroke:rgb(128,121,0);"/>
+    <path d="M232.95,74.13C206.108,99.717 164.68,94.2 128.661,75.329C85.162,52.54 56.547,57.041 32.88,72.908" id="hair" style="fill:none;stroke-width:5.92px;stroke:rgb(128,121,0);"/>
+</svg>
