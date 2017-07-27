@@ -20,7 +20,7 @@ From 2010-2013 I contributed to the on-going development of the user interface f
 I designed and established a clean, simple visual and interactive style that was an evolution from app's current style. I also built several UI widgets to ensure consistent presentation whilst enhancing the user's experience.
 
 ###### Rebrandable
-<img src="/assets/img/work-article-instiller-ui-rebrand.png" alt="" title="Screenshot of rebrandable UI"/>
+![Screenshot of rebrandable UI](work-article-instiller-ui-rebrand.png "Screenshot of rebrandable UI")
 As the app is white label visual style is kept simple to fit with a wide range of brands.
 
 
@@ -28,5 +28,5 @@ As the app is white label visual style is kept simple to fit with a wide range o
 Grids and consistent navigational elements improve usability. Colour was reduced to a traffic light system of red ("error"), amber ("warning") and green ("ok/done"); with blue also used for "info". I designed custom icons for UI elements and to represent different content types.
 
 ###### Powerful
-<img src="/assets/img/work-article-instiller-ui-item.png" alt="" title="Screenshot of UI element"/>
+![Screenshot of UI element](work-article-instiller-ui-item.png "Screenshot of UI element")
 UI widgets, such as javascript emulating a single page web-app improve user experience and reduce development time.

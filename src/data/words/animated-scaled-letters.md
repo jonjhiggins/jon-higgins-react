@@ -9,7 +9,7 @@ tags: [development, css, javascript, greensock]
 
 The goal is to create a continuous animation of letters "A" to "B" using a web browser. It should look something like this:
 
-<img src="/assets/img/a-to-b.gif" alt="" title="A to B animation"/>
+![A to B animation!](a-to-b.gif)
 
 ### Version 1: HTML / CSS and GreenSock
 

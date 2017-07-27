@@ -9,6 +9,11 @@ import marked from 'marked'
 import {highlightAuto} from 'highlight.js'
 import 'highlight.js/styles/github.css'
 
+// Override image renderer so that webpack can handle
+marked.prototype.constructor.Renderer.prototype.image = function (href, title, text) {
+  return `<img src=${require(`../../assets/img/${href}`)} alt="${text}" title="${title}"/>`
+}
+
 marked.setOptions({
   highlight: function (code) {
     return highlightAuto(code).value
@@ -22,7 +27,7 @@ class Articles extends Component {
       title: this.props.content ? this.props.content.title : '',
       heroImages: this.props.content ? this.props.content.heroImages : null,
       text: this.props.content ? this.props.content.content : '',
-      contentUrl: this.props.content ? this.props.content.contentUrl : null
+      contentUrl: this.props.content ? this.props.content.content_url : null
     }
   }
 

@@ -27,7 +27,7 @@ The NEC Group (ICC's parent company) also required a new website for their new v
 ##### Design
 The NEC's marketing agency [Eight Feet Tall](http://www.eightfeet-tall.com/) worked on a new visual aesthetic for the ICC, which resulted in flat PSDs of the site at desktop size. Areas with a high level of interaction were intentionally left blank so that we could prototype these together in-browser.
 
-![ICC design](/assets/img/work-item-icc-birmingham@2x.png "ICC design")
+![ICC design](work-item-icc-birmingham@2x.png "ICC design")
 
 ##### Frontend development
 I led the frontend development for the ICC. My focus was on:
@@ -39,7 +39,7 @@ I led the frontend development for the ICC. My focus was on:
 ##### Working together
 At various points in this project I was pairing up with both frontend and backend devs, as well as designers and stakeholders. The ICC's [hall picker](http://www.theicc.co.uk/venue/halls) was one area that benefited from everyone's input, which we produced several iterations of following feedback from user testing.
 
-![ICC Hall picker](/assets/img/work-item-icc-hall-picker@2x.png "ICC Hall picker")
+![ICC Hall picker](work-item-icc-hall-picker@2x.png "ICC Hall picker")
 
 #### The outcome
 The ICC's new site successfully launched in June 2014, with The Vox's site launching slightly before.
