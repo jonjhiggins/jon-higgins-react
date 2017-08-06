@@ -45,7 +45,7 @@ module.exports = {
     contentBase: paths.appPublic,
     compress: true,
     clientLogLevel: 'none',
-    port: 9000,
+    port: 3000,
     hot: true,
     open: true,
     openPage: '',
