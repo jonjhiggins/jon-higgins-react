@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import HomeShape from '../HomeShape'
+import anime from 'animejs'
 
 class Home extends Component {
-  constructor (props) {
+  constructor (props, options) {
     super(props)
 
-    this.animationContent = [
+    const DEFAULTS = {
+      fadeInDuration: 400,
+      animationContent: [
         ['', '', ''],
         ['Hi', 'I&rsquo;m', 'Jon Higgins,'],
         ['a', 'front-end', 'developer'],
@@ -13,7 +16,10 @@ class Home extends Component {
         ['and', 'enjoys', 'experimenting.'],
         ['Is', 'partial to', 'collaboration'],
         ['and', 'first-rate', 'production.']
-    ]
+      ]
+    }
+
+    this.settings = Object.assign(DEFAULTS, options)
 
     const is3d = false
     const is3dParent = false
@@ -69,12 +75,9 @@ class Home extends Component {
   }
 
   componentDidMount () {
-    // Fade in content
-    // TweenLite.from(this.$shapes, 0.4, {
-    //   opacity: 0,
-    //   delay: 0.4
-    // })
-
+    // Hide content to it can be faded in
+    this.homeTextAnimation = this.refs.homeTextAnimation
+    this.homeTextAnimation.style.opacity = 0
     // Animate
     this.shapeAnimation()
   }
@@ -168,11 +171,18 @@ class Home extends Component {
   // Set the content of the text element itself
   shapeTextSetContent (shapeIndex, shapeTextIndex, actualSideNo) {
     const newState = this.state.shapes.slice()
-    newState[shapeIndex].content[actualSideNo] = this.animationContent[shapeTextIndex][shapeIndex]
+    newState[shapeIndex].content[actualSideNo] = this.settings.animationContent[shapeTextIndex][shapeIndex]
     this.setState({shapes: newState})
   }
 
   render () {
+    // Fade in
+    anime({
+      targets: this.homeTextAnimation,
+      opacity: 1,
+      duration: this.settings.fadeInDuration
+    })
+
     return (
       <section className={`home body-text ${this.preserve3dClass}`}>
         <div className="container">
@@ -180,7 +190,7 @@ class Home extends Component {
             <h1>Jon Higgins - a front-end developer based in Melbourne, Australia</h1>
           </div>
           <div className="home__content home__content--animation">
-            <div className="home__text-animation">
+            <div className="home__text-animation" ref="homeTextAnimation">
               <HomeShape state={this.state.shapes[0]}/>
               <HomeShape state={this.state.shapes[1]}/>
               <HomeShape state={this.state.shapes[2]}/>
