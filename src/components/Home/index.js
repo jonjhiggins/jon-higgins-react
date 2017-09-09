@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import HomeShape from '../HomeShape'
+import { findDOMNode } from 'react-dom'
+import { Transition } from 'react-transition-group'
+import HomeShapes from '../HomeShapes'
 import anime from 'animejs'
 
 class Home extends Component {
@@ -7,49 +9,12 @@ class Home extends Component {
     super(props)
 
     const DEFAULTS = {
-      fadeInDuration: 400,
-      animationContent: [
-        ['', '', ''],
-        ['Hi', 'I&rsquo;m', 'Jon Higgins,'],
-        ['a', 'front-end', 'developer'],
-        ['who', 'loves', 'learning'],
-        ['and', 'enjoys', 'experimenting.'],
-        ['Is', 'partial to', 'collaboration'],
-        ['and', 'first-rate', 'production.']
-      ]
+      fadeInDuration: 400
     }
 
     this.settings = Object.assign(DEFAULTS, options)
-
-    const is3d = false
-    const is3dParent = false
-    const highlight = false
-    const showSide = 1
-
     this.state = {
-      shapes: [
-        {
-          is3d,
-          is3dParent,
-          highlight,
-          showSide,
-          content: new Array(4) // Shape has 4 sides
-        },
-        {
-          is3d,
-          is3dParent,
-          highlight,
-          showSide,
-          content: new Array(4)
-        },
-        {
-          is3d,
-          is3dParent,
-          highlight,
-          showSide,
-          content: new Array(4)
-        }
-      ]
+      homeTextAnimationIn: false
     }
 
     // Disable 3d animation if transform-style: preserve-3d is not available
@@ -75,114 +40,26 @@ class Home extends Component {
   }
 
   componentDidMount () {
+    console.log('home componentDidMount')
     // Hide content to it can be faded in
-    this.homeTextAnimation = this.refs.homeTextAnimation
+    this.homeTextAnimation = findDOMNode(this.refs.homeTextAnimation)
     this.homeTextAnimation.style.opacity = 0
-    // Animate
-    this.shapeAnimation()
+
+    this.setState({homeTextAnimationIn: true})
   }
 
-  rotateShapes (sideNo, delay) {
-    const setShape3d = function (shapeIndex) {
-      const newState = this.state.shapes.slice()
-      newState[shapeIndex]['is3d'] = true
-      newState[shapeIndex]['is3dParent'] = true
-      this.setState({shapes: newState})
-    }
-
-    const unsetShape3d = function (shapeIndex) {
-      const newState = this.state.shapes.slice()
-      newState[shapeIndex]['is3d'] = false
-      this.setState({shapes: newState})
-      // // Fix Android Chrome layout bug when shapes are flat
-      window.setTimeout(() => {
-        newState[shapeIndex]['is3dParent'] = false
-        this.setState({shapes: newState})
-      }, 400) // 400ms = transition on shape__side
-    }
-
-    const highlight = function (shapeIndex, highlight) {
-      const newState = this.state.shapes.slice()
-      newState[shapeIndex]['highlight'] = highlight
-      this.setState({shapes: newState})
-    }
-
-    const updateShapeClasses = function (shapeIndex, sideNo) {
-      const newState = this.state.shapes.slice()
-      newState[shapeIndex]['showSide'] = sideNo
-      this.setState({shapes: newState})
-    }
-
-    const showSide = function (shapeIndex, sideNo) {
-      // Move forward
-      setShape3d.call(this, shapeIndex)
-      // Show side
-      window.setTimeout(updateShapeClasses.bind(this, shapeIndex, sideNo), 100)
-
-      // Highlight text
-      window.setTimeout(highlight.bind(this, shapeIndex, true), 400)
-      window.setTimeout(highlight.bind(this, shapeIndex, false), 2400)
-
-      // Move backward
-      window.setTimeout(unsetShape3d.bind(this, shapeIndex), 500)
-    }
-
-    window.setTimeout(showSide.bind(this, 0, sideNo), delay + 400)
-    window.setTimeout(showSide.bind(this, 1, sideNo), delay + 800)
-    window.setTimeout(showSide.bind(this, 2, sideNo), delay + 1200)
-  }
-
-  shapeAnimation () {
-    const rotateDelay = 2400
-    const sidesTotal = 6
-    const sidesStartIndex = 2
-
-    const startTimeline = function () {
-      for (let i = 0; i < sidesTotal; i++) {
-        this.setContentRotateShapes(sidesStartIndex + i, rotateDelay * i)
-      }
-    }
-
-    startTimeline.call(this)
-    window.setInterval(startTimeline.bind(this), rotateDelay * (sidesTotal + 1))
-  };
-
-  setContentRotateShapes (sideNo, delay) {
-    this.setShapeContent(sideNo, delay)
-    this.rotateShapes(sideNo, delay)
-  };
-
-  setShapeContent (sideNo, delay) {
-    // There are only 4 sides to each shape.
-    // When sideNo is over 4, replace the 1st side, 2nd side again etc.
-    const shapeTextIndex = sideNo - 1
-    const actualSideNo = shapeTextIndex % 4
-
-    // Shape sides: set the text content
-    window.setTimeout(this.shapeItemSetContent.bind(this, shapeTextIndex, actualSideNo), delay + 300)
-  };
-
-  // iterate through the 3 shapes, call shapeTextSetContent on each text element
-  shapeItemSetContent (shapeTextIndex, actualSideNo) {
-    for (const [shapeIndex] of this.state.shapes.entries()) {
-      this.shapeTextSetContent(shapeIndex, shapeTextIndex, actualSideNo)
-    }
-  }
-  // Set the content of the text element itself
-  shapeTextSetContent (shapeIndex, shapeTextIndex, actualSideNo) {
-    const newState = this.state.shapes.slice()
-    newState[shapeIndex].content[actualSideNo] = this.settings.animationContent[shapeTextIndex][shapeIndex]
-    this.setState({shapes: newState})
+  onEnter (element) {
+    // Fade in
+    anime({
+      targets: element,
+      opacity: 1,
+      duration: this.settings.fadeInDuration,
+      easing: 'linear'
+    })
   }
 
   render () {
-    // Fade in
-    anime({
-      targets: this.homeTextAnimation,
-      opacity: 1,
-      duration: this.settings.fadeInDuration
-    })
-
+    console.log('home render')
     return (
       <section className={`home body-text ${this.preserve3dClass}`}>
         <div className="container">
@@ -190,11 +67,15 @@ class Home extends Component {
             <h1>Jon Higgins - a front-end developer based in Melbourne, Australia</h1>
           </div>
           <div className="home__content home__content--animation">
-            <div className="home__text-animation" ref="homeTextAnimation">
-              <HomeShape state={this.state.shapes[0]}/>
-              <HomeShape state={this.state.shapes[1]}/>
-              <HomeShape state={this.state.shapes[2]}/>
-            </div>
+            <Transition
+              in={this.state.homeTextAnimationIn}
+              timeout={this.settings.fadeInDuration}
+              onEnter={this.onEnter.bind(this)}
+              onEntering={this.onEntering}
+              onEntered={this.onEntering}
+            >
+              <HomeShapes ref="homeTextAnimation"/>
+            </Transition>
           </div>
         </div>
       </section>
