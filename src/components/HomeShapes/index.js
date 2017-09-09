@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import HomeShape from '../HomeShape'
+import Timeout from '../Timeout'
 
 class HomeShapes extends Component {
   constructor (props, options) {
@@ -75,7 +76,7 @@ class HomeShapes extends Component {
       newState[shapeIndex]['is3d'] = false
       this.setState({shapes: newState})
       // Fix Android Chrome layout bug when shapes are flat
-      window.setTimeout(() => {
+      this.props.setTimeout(() => {
         newState[shapeIndex]['is3dParent'] = false
         this.setState({shapes: newState})
       }, 400) // 400ms = transition on shape__side
@@ -97,19 +98,19 @@ class HomeShapes extends Component {
       // Move forward
       setShape3d.call(this, shapeIndex)
       // Show side
-      window.setTimeout(updateShapeClasses.bind(this, shapeIndex, sideNo), 100)
+      this.props.setTimeout(updateShapeClasses.bind(this, shapeIndex, sideNo), 100)
 
       // Highlight text
-      window.setTimeout(highlight.bind(this, shapeIndex, true), 400)
-      window.setTimeout(highlight.bind(this, shapeIndex, false), 2400)
+      this.props.setTimeout(highlight.bind(this, shapeIndex, true), 400)
+      this.props.setTimeout(highlight.bind(this, shapeIndex, false), 2400)
 
       // Move backward
-      window.setTimeout(unsetShape3d.bind(this, shapeIndex), 500)
+      this.props.setTimeout(unsetShape3d.bind(this, shapeIndex), 500)
     }
 
-    window.setTimeout(showSide.bind(this, 0, sideNo), delay + 400)
-    window.setTimeout(showSide.bind(this, 1, sideNo), delay + 800)
-    window.setTimeout(showSide.bind(this, 2, sideNo), delay + 1200)
+    this.props.setTimeout(showSide.bind(this, 0, sideNo), delay + 400)
+    this.props.setTimeout(showSide.bind(this, 1, sideNo), delay + 800)
+    this.props.setTimeout(showSide.bind(this, 2, sideNo), delay + 1200)
   }
 
   shapeAnimation () {
@@ -139,7 +140,7 @@ class HomeShapes extends Component {
     const actualSideNo = shapeTextIndex % 4
 
     // Shape sides: set the text content
-    window.setTimeout(this.shapeItemSetContent.bind(this, shapeTextIndex, actualSideNo), delay + 300)
+    this.props.setTimeout(this.shapeItemSetContent.bind(this, shapeTextIndex, actualSideNo), delay + 300)
   };
 
   // iterate through the 3 shapes, call shapeTextSetContent on each text element
@@ -167,4 +168,4 @@ class HomeShapes extends Component {
   }
 }
 
-export default HomeShapes
+export default Timeout(HomeShapes)
