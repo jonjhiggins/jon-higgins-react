@@ -44,7 +44,7 @@ class ArticlesItem extends Component {
             <figure className="article-item__image">
               {responsiveImages &&
                 <picture>
-                  <source media="(min-width: 58.25rem)" srcset={`/assets/img/${content.images[1]}`} /> {/* Large breakpoint */}
+                  <source media="(min-width: 58.25rem)" srcSet={`/assets/img/${content.images[1]}`} /> {/* Large breakpoint */}
                   <img src={`/assets/img/${content.images[0]}`} alt=""/>
                 </picture>
               }
