@@ -54,7 +54,6 @@ class HomeShapes extends Component {
   }
 
   componentDidMount () {
-    console.log('homeshapes componentDidMount')
     // Animate
     this.shapeAnimation()
   }
@@ -157,7 +156,6 @@ class HomeShapes extends Component {
   }
 
   render () {
-    console.log('homeshapes render')
     return (
       <div className="home__text-animation" ref="homeTextAnimation">
         <HomeShape state={this.state.shapes[0]}/>

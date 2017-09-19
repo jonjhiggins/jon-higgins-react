@@ -40,7 +40,6 @@ class Home extends Component {
   }
 
   componentDidMount () {
-    console.log('home componentDidMount')
     // Hide content to it can be faded in
     this.homeTextAnimation = findDOMNode(this.refs.homeTextAnimation)
     this.homeTextAnimation.style.opacity = 0
@@ -59,7 +58,6 @@ class Home extends Component {
   }
 
   render () {
-    console.log('home render')
     return (
       <section className={`home body-text ${this.preserve3dClass}`}>
         <div className="container">
@@ -71,8 +69,6 @@ class Home extends Component {
               in={this.state.homeTextAnimationIn}
               timeout={this.settings.fadeInDuration}
               onEnter={this.onEnter.bind(this)}
-              onEntering={this.onEntering}
-              onEntered={this.onEntering}
             >
               <HomeShapes ref="homeTextAnimation"/>
             </Transition>
