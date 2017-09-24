@@ -4,6 +4,9 @@
 
 import React, { Component } from 'react'
 import ArticlesItem from '../../components/ArticlesItem/'
+import { Link } from 'react-router-dom'
+import App from '../../components/App/'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class Articles extends Component {
   render () {
@@ -39,7 +42,7 @@ class Articles extends Component {
           </div>
 
           {this.props.archiveAvailable &&
-            <div className="button-holder"><a href="/work/archive" className="button button--arrow button--secondary">View Archived Work</a></div>
+            <div className="button-holder"><Link to="/work/archive" className="button button--arrow button--secondary">View Archived Work</Link></div>
           }
         </div>
       </div>

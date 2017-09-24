@@ -4,6 +4,7 @@
  */
 
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import marked from 'marked'
@@ -33,7 +34,7 @@ class ArticlesItem extends Component {
     const responsiveImages = content.images && content.images.length > 1
     return (
       <article className={`article-item ${content.className ? 'article-item--' + content.className : ''}`}>
-        <a href={content.url} className="article-item__link">
+        <Link to={content.url} className="article-item__link">
           <header className="article-item__header">
             {/* @TODO add date in {{#if archiveMode}}
             <p className="article-item__date">{{date}}</p>
@@ -59,7 +60,7 @@ class ArticlesItem extends Component {
               <div className="button button--arrow">View</div>
             </div>
           </footer>
-        </a>
+        </Link>
       </article>
 
     )
