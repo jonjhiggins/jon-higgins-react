@@ -2,11 +2,13 @@
  * Single article view, e.g. /work/land-rover-interactive-stories
  */
 
-import React, { Component } from 'react'
+import React from 'react'
+import BaseComponent from '../BaseComponent'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import marked from 'marked'
 import {highlightAuto} from 'highlight.js'
+import { Transition } from 'react-transition-group'
 import 'highlight.js/styles/github.css'
 
 // Override image renderer so that webpack can handle
@@ -20,7 +22,7 @@ marked.setOptions({
   }
 })
 
-class Articles extends Component {
+class Article extends BaseComponent {
   formatContent () {
     return {
       date: this.props.content && this.props.content.date ? moment(this.props.content.date, 'YYYYMMDD').format('MMM YYYY') : '',
@@ -35,25 +37,32 @@ class Articles extends Component {
     const content = this.formatContent()
     return (
       <article className="article {content.class ? 'article--' + content.class : ''}">
-        <div className="page">
-          {content.date &&
-            <p className="article__date">{content.date}</p>
-          }
-          <h1 className="article__title">{content.title}</h1>
-          {/*}{this.showHeroImages(content.heroImages)}*/}
-          <div className="article__description" dangerouslySetInnerHTML={{__html: marked(content.text)}}></div>
-          {content.contentUrl &&
-            <div className="article__buttons button-holder">
-              <a href={content.contentUrl} className="button button--arrow">View Work</a>
-            </div>
-          }
-        </div>
+        <Transition
+          in={this.state.baseAnimationIn}
+          timeout={this.settings.baseAnimationFadeInDuration}
+          onEnter={this.handleEnter.bind(this)}
+          ref="baseAnimationWrapper"
+        >
+          <div className="page">
+            {content.date &&
+              <p className="article__date">{content.date}</p>
+            }
+            <h1 className="article__title">{content.title}</h1>
+            {/*}{this.showHeroImages(content.heroImages)}*/}
+            <div className="article__description" dangerouslySetInnerHTML={{__html: marked(content.text)}}></div>
+            {content.contentUrl &&
+              <div className="article__buttons button-holder">
+                <a href={content.contentUrl} className="button button--arrow">View Work</a>
+              </div>
+            }
+          </div>
+        </Transition>
       </article>
     )
   }
 }
 
-Articles.propTypes = {
+Article.propTypes = {
   content: PropTypes.shape({
     date: PropTypes.date,
     title: PropTypes.string,
@@ -63,4 +72,4 @@ Articles.propTypes = {
   })
 }
 
-export default Articles
+export default Article

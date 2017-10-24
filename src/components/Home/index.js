@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import BaseComponent from '../BaseComponent'
 import { findDOMNode } from 'react-dom'
 import { Transition } from 'react-transition-group'
 import HomeShapes from '../HomeShapes'
 import anime from 'animejs'
 
-class Home extends Component {
+class Home extends BaseComponent {
   constructor (props, options) {
     super(props)
 
