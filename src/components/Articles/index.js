@@ -6,7 +6,6 @@ import React from 'react'
 import BaseComponent from '../BaseComponent'
 import ArticlesItem from '../../components/ArticlesItem/'
 import { Link } from 'react-router-dom'
-import App from '../../components/App/'
 import { Transition } from 'react-transition-group'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
