@@ -43,9 +43,9 @@ class SiteSection extends Component {
 
     // If there's a contentID we show individual article view, if not show list articles view
     if (contentID) {
-      return (<Article type={this.type} content={this.state[this.type][contentID]}/>)
+      return (<Article type={this.type} content={this.state[this.type][contentID]} outlineDraw={this.props.outlineDraw} />)
     } else {
-      return (<Articles type={this.type} content={this.state[this.type]} archiveMode={archive} archiveAvailable={true}/>)
+      return (<Articles type={this.type} content={this.state[this.type]} archiveMode={archive} archiveAvailable={true} outlineDraw={this.props.outlineDraw}/>)
     }
   }
 }

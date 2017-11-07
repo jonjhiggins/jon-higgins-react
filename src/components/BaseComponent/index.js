@@ -26,13 +26,12 @@ class BaseCommponent extends Component {
     this.setState({baseAnimationIn: true})
   }
 
-  componentWillLeave () {
-    console.log('componentWillLeave')
+  componentWillUnmount () {
+    this.setState({baseAnimationIn: false})
   }
 
-  componentWillUnmount () {
-    console.log('componentWillUnmount')
-    this.setState({baseAnimationIn: false})
+  handleExit () {
+
   }
 
   handleEnter (element) {
@@ -43,10 +42,6 @@ class BaseCommponent extends Component {
       duration: this.settings.baseAnimationFadeInDuration,
       easing: 'linear'
     })
-  }
-
-  handleExit (element) {
-    console.log('exit')
   }
 }
 
