@@ -17,7 +17,7 @@ class App extends Component {
     this.handleOutlineDraw = this.handleOutlineDraw.bind(this)
 
     this.state = {
-      outlineSize: {
+      outlineStyles: {
         height: 0,
         width: 0,
         left: 0,
@@ -26,8 +26,12 @@ class App extends Component {
     }
   }
 
-  handleOutlineDraw (size) {
-    this.setState({outlineSize: size})
+  /**
+   * Update <outline>'s state to draw an animated outline
+   * @param  {object} styles styles object, keys must match standard HTMLElement.style options
+   */
+  handleOutlineDraw (styles) {
+    this.setState({outlineStyles: styles })
   }
 
   render () {
@@ -52,7 +56,7 @@ class App extends Component {
             </Switch>
           </main>
           <footer id="footer"></footer>
-          <Outline outlineSize={this.state.outlineSize}/>
+          <Outline outlineStyles={this.state.outlineStyles}/>
         </div>
       </Router>
     )

@@ -28,7 +28,7 @@ class Article extends BaseComponent {
     super()
 
     this.pageElement = null // used to draw outline animation over
-    this.outlineSize = {
+    this.outlineStyles = {
       height: 0,
       width: 0,
       left: 0,
@@ -61,14 +61,16 @@ class Article extends BaseComponent {
     // Take into account window scrolling
     top = top += window.scrollY
     left = left += window.scrollX
-    const sizes = { height, width, top, left }
+    // Add in border color
+    const borderColor = window.getComputedStyle(this.pageElement).borderColor
+    const styles = { height, width, top, left, color: borderColor }
 
-    if (this.outlineSize.height !== height ||
-        this.outlineSize.width !== width ||
-        this.outlineSize.top !== top ||
-        this.outlineSize.left !== left) {
-      this.props.outlineDraw(sizes)
-      this.outlineSize = sizes
+    if (this.outlineStyles.height !== height ||
+        this.outlineStyles.width !== width ||
+        this.outlineStyles.top !== top ||
+        this.outlineStyles.left !== left) {
+      this.props.outlineDraw(styles)
+      this.outlineStyles = styles
     }
   }
 
