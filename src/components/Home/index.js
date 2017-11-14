@@ -46,6 +46,8 @@ class Home extends BaseComponent {
     this.homeTextAnimation.style.opacity = 0
 
     this.setState({homeTextAnimationIn: true})
+    // Hide <outline> - not required
+    this.props.outlineShow(false)
   }
 
   onEnter (element) {

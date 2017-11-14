@@ -849,7 +849,9 @@ pre {
 
 .outline {
   pointer-events: none;
-  position: absolute; }
+  position: absolute;
+  background-color: #FFF;
+}
   .outline span {
     position: absolute;
     top: 0;

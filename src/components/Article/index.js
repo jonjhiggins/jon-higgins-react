@@ -40,6 +40,7 @@ class Article extends BaseComponent {
    */
   componentDidMount () {
     this.pageElement = findDOMNode(this.refs.pageElement)
+    this.props.outlineShow(true)
     this.outlineAnimation()
   }
 

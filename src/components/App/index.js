@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Transition } from 'react-transition-group'
 import ErrorPage from '../ErrorPage/'
 import Home from '../Home/'
 import Navigation from '../Navigation/'
@@ -15,6 +16,7 @@ class App extends Component {
     super(props)
 
     this.handleOutlineDraw = this.handleOutlineDraw.bind(this)
+    this.handleOutlineShow = this.handleOutlineShow.bind(this)
 
     this.state = {
       outlineStyles: {
@@ -22,8 +24,17 @@ class App extends Component {
         width: 0,
         left: 0,
         top: 0
-      }
+      },
+      outlineShow: false
     }
+  }
+
+  /**
+   * Show the <outline> element to draw an animated outline
+   * @param {boolean} show show or hide
+   */
+  handleOutlineShow (show) {
+    this.setState({outlineShow: show})
   }
 
   /**
@@ -31,7 +42,14 @@ class App extends Component {
    * @param  {object} styles styles object, keys must match standard HTMLElement.style options
    */
   handleOutlineDraw (styles) {
-    this.setState({outlineStyles: styles })
+    this.setState({ outlineStyles: styles })
+  }
+
+  /**
+   * Hide <outline> when animation finsihed
+   */
+  handleOutlineEntered () {
+    this.setState({ outlineShow: false })
   }
 
   render () {
@@ -44,19 +62,27 @@ class App extends Component {
           </header>
           <main id="main">
             <Switch>
-              <Route exact path="/" component={ Home }/>
+              <Route exact path="/" render={(props) => (
+                <Home {...props} outlineShow={this.handleOutlineShow} />
+              )}/>
               <Route path="/work/:contentID" component={ Work } />
               <Route path="/work" component={ Work } />
               <Route path="/words/:contentID" component={ Words } />
               <Route path="/words" component={ Words } />
               <Route path="/who" render={(props) => (
-                <Who {...props} contentID='who' outlineDraw={this.handleOutlineDraw} />
+                <Who {...props} contentID='who' outlineDraw={this.handleOutlineDraw} outlineShow={this.handleOutlineShow} />
               )} />
               <Route component={ ErrorPage } />
             </Switch>
           </main>
           <footer id="footer"></footer>
-          <Outline outlineStyles={this.state.outlineStyles}/>
+          <Transition
+            in={this.state.outlineShow}
+            timeout={2000}
+            onEntered={this.handleOutlineEntered.bind(this)}
+          >
+            <Outline outlineStyles={this.state.outlineStyles} show={this.state.outlineShow}/>
+          </Transition>
         </div>
       </Router>
     )
